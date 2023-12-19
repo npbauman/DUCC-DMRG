@@ -1,0 +1,26 @@
+**************************************************************
+File = N2_1.8.out
+
+Nuclear Repulsion E = 14.4053806725059
+# Active Orbitals = 10
+# Frozen Core = 0
+# Occupied Orbitals = 7
+# Virtual Orbitals = 3
+
+Original SCF Energy = -108.8369663426941
+Core Energy =0.0
+
+New Repulsion Energy (Core+Repulsion)= 14.4053806725059
+
+New orbital energies after downfolding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-15.718092
+-15.717679
+-1.143423
+-0.963160
+-0.560604
+-0.474888
+-0.474888
+-0.002153
+-0.002153
+0.158549

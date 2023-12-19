@@ -1,0 +1,275 @@
+
+date: Mon Dec 18 15:42:54 2023
+program: "/hpc/home/baum612/code/exachem-dev/build/methods_stage/hpc/home/baum612/code/tamm_install/methods/ExaChem"
+input: /hpc/home/baum612/code/exachem-dev/inputs/N2/N2_1.0.json
+nnodes: 1, nproc: 2
+prefix: N2_1.0
+
+Memory information
+{
+ CPU memory per node (GiB): 4534
+ Total CPU memory (GiB): 4534
+}
+
+
+Input file provided
+--------------------
+{
+  "geometry": {
+    "coordinates": [
+      "N  0.000000  0.000000  1.000000",
+      "N  0.000000  0.000000  0.000000"
+    ],
+    "units": "angstrom"
+  },
+  "basis": {
+    "basisset": "cc-pVTZ",
+    "atom_basis": null
+  },
+  "SCF": {
+    "conve": 1e-09,
+    "convd": 1e-08,
+    "tilesize": 30,
+    "restart": false
+  },
+  "CD": {
+    "diagtol": 1e-06
+  },
+  "CC": {
+    "threshold": 1e-08,
+    "ccsd_maxiter": 50,
+    "nactive": 21,
+    "freeze": {
+      "core": 0
+    },
+    "PRINT": {
+      "tamplitudes": [
+        true,
+        0.05
+      ]
+    }
+  },
+  "TASK": {
+    "scf": false,
+    "mp2": false,
+    "cd_2e": false,
+    "ccsd": false,
+    "ccsd_t": false,
+    "ducc": true
+  }
+}
+
+Number of nodes, processes per node used for SCF calculation: 1, 2
+
+SCF Options
+{
+ charge       = 0
+ multiplicity = 1
+ level shift  = 0
+ tol_int      = 1e-22
+ tol_sch      = 1e-10
+ tol_lindep   = 1e-05
+ conve        = 1e-09
+ convd        = 1e-08
+ diis_hist    = 10
+ AO_tilesize  = 30
+ writem       = 1
+ damp         = 100
+ scf_type     = restricted
+ restart_size = 2000
+ restart      = false
+ debug        = false
+}
+**** Resetting tol_sch to 1e-11
+
+Number of basis functions = 60
+
+Total number of shells = 20
+
+Total number of electrons = 14
+  # of alpha electrons    = 7
+  # of beta electons      = 7
+
+Nuclear repulsion energy  = 25.9296852105106
+
+# of {all,non-negligible} shell-pairs = {210,210}
+Number of AO tiles = 20
+
+Time for initial setup: 0.01 secs
+
+Time for computing 1-e integrals T, V, S: 0.00 secs
+Time for computing orthogonalizer: 0.00 secs
+
+Superposition of Atomic Density Guess ...
+Time taken for SAD: 0.06 secs
+Total Time to compute initial guess: 0.10 secs
+
+
+ SCF iterations
+-----------------------------------------------------------------
+ Iter     Energy            E-Diff       RMSD          Time(s)
+-----------------------------------------------------------------
+   1  -108.9557185035    -1.09e+02     2.60e-03         0.1 
+   2  -108.9673236804    -1.16e-02     5.71e-04         0.1 
+   3  -108.9679738597    -6.50e-04     1.67e-04         0.1 
+   4  -108.9680147237    -4.09e-05     2.73e-05         0.1 
+   5  -108.9680149655    -2.42e-07     5.57e-06         0.1 
+   6  -108.9680149688    -3.26e-09     4.77e-07         0.1 
+   7  -108.9680149688    -2.11e-11     3.16e-08         0.1 
+   8  -108.9680149688    -5.97e-13     3.86e-09         0.1 
+
+** Total SCF energy = -108.9680149688083
+
+Nuclear repulsion energy = 25.929685210510620
+#electrons        = 14.000000000000004
+1e energy kinetic = 109.5716646369127147
+1e energy N-e     = -308.3117529784448152
+1e energy         = -198.7400883415321289
+2e energy         = 63.8423881280582464
+writing orbitals and density to disk ... done.
+
+Time taken for Hartree-Fock: 0.66 secs
+
+CCSD Options
+{
+ cache_size           = 8
+ ccsdt_tilesize       = 32
+ ndiis                = 5
+ threshold            = 1e-08
+ tilesize             = 40
+ nactive              = 21
+ ccsd_maxiter         = 50
+ freeze_atomic         = false
+ freeze_core          = 0
+ freeze_virtual       = 0
+ readt                = false
+ writet               = false
+ writev               = false
+ writet_iter          = 5
+ profile_ccsd         = false
+ balance_tiles        = true
+ eom_nroots           = 1
+ eom_microiter        = 50
+ eom_threshold        = 1e-06
+ debug                = false
+}
+
+#occupied, #virtual = 14, 106
+
+Resetting CCSD tilesize to: 50
+
+CD Options
+{
+ debug            = false
+ write_cv         = false
+ diagtol          = 1e-06
+ write_vcount     = 5000
+ itilesize        = 1000
+ max_cvecs_factor = 12
+}
+
+-----------------------------------------------------
+Begin 2-index transformation ... 
+
+nAO, nMO, nelectrons = 60, 120, 14
+n_occ_alpha, n_vir_alpha, n_occ_beta, n_vir_beta = 7,53,7,53
+
+Time taken for Fao->Fmo transform: 0.00 secs
+
+-----------------------------------------------------
+Number of AO tiles = 20
+# of {all,non-negligible} shell-pairs = {210,210}
+
+    Begin Cholesky Decomposition
+---------------------------------------------
+- CPU memory required for computing cholesky vectors: 0.02 GiB
+
+- Time for computing the diagonal: 0.00 secs
+
+- Total number of cholesky vectors = 467
+
+- Time to compute cholesky vectors: 1.47 secs
+
+- CPU memory required for resizing the ao cholesky tensor: 0.03 GiB
+- CPU memory required for ao2mo transformation: 0.04 GiB
+- CPU memory required for the 2-step contraction: 0.05 GiB
+
+- Time for ao to mo transform: 0.13 secs
+
+    End Cholesky Decomposition
+---------------------------------------------
+
+Total Time taken for Cholesky Decomposition: 1.63 secs
+
+----------------------------
+scf_type = restricted
+Closed-Shell SCF
+nbf = 60
+nbf_orig = 60
+n_lindep = 0
+focc = 1
+nmo = 120
+nocc = 14
+nvir = 106
+n_occ_alpha = 7
+n_vir_alpha = 53
+n_occ_beta = 7
+n_vir_beta = 53
+nelectrons = 14
+nelectrons_alpha = 7
+nelectrons_beta = 7
+n_frozen_core = 0
+n_frozen_virtual = 0
+----------------------------
+
+Total CPU memory required for Closed Shell Cholesky CCSD calculation: 0.09 GiB
+
+
+ CCSD iterations
+------------------------------------------------------------
+  Iter     Residuum          Correlation          Time(s)
+------------------------------------------------------------
+   1     0.7470284646142    0.0000000000000         0.30
+   2     0.0810734539795   -0.3770943189005         0.28
+   3     0.0250368726564   -0.3705601257881         0.28
+   4     0.0067396743559   -0.3810239277927         0.28
+   5     0.0032453722687   -0.3808202473031         0.28
+ MICROCYCLE DIIS UPDATE:                    6
+   6     0.0011819811532   -0.3819779676408         0.27
+   7     0.0004449779489   -0.3818207060687         0.28
+   8     0.0002082536671   -0.3818482027767         0.27
+   9     0.0001043600200   -0.3818537624186         0.28
+  10     0.0000528223343   -0.3818599773055         0.28
+ MICROCYCLE DIIS UPDATE:                   11
+  11     0.0000026465014   -0.3818668223054         0.28
+  12     0.0000007354427   -0.3818673025490         0.28
+  13     0.0000002172547   -0.3818672893055         0.28
+  14     0.0000000910621   -0.3818673052238         0.28
+  15     0.0000000332527   -0.3818673068249         0.28
+ MICROCYCLE DIIS UPDATE:                   16
+  16     0.0000000083356   -0.3818673093552         0.28
+------------------------------------------------------------------
+ Iterations converged
+ CCSD correlation energy / hartree =        -0.381867309355191
+ CCSD total energy / hartree       =      -109.349882278163506
+
+Time taken for Closed Shell Cholesky CCSD: 4.58 secs
+
+Threshold for printing amplitudes set to: 0.05
+T1, T2 amplitudes written to files: N2_1.0.cc-pvtz_files/restricted/N2_1.0.cc-pvtz.print_t1amp.txt, N2_1.0.cc-pvtz_files/restricted/N2_1.0.cc-pvtz.print_t2amp.txt
+
+
+DUCC: Time taken to compute Bare Hamiltonian: 0.00 secs
+
+DUCC: Time taken to compute Single Commutator: 0.20 secs
+
+DUCC: Time taken to compute Double Commutator: 8.38 secs
+
+DUCC: Time taken to compute Triple Commutator: 3.71 secs
+
+DUCC: Total Compute Time: 12.30 secs
+
+Number of active orbitals = 28
+
+
+DUCC: Time to write results: 0.26 secs

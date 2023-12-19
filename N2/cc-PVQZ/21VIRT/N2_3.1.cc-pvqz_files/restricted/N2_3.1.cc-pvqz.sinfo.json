@@ -1,0 +1,13 @@
+{
+  "molecule": {
+    "name": "N2_3.1",
+    "basis": {
+      "all": "cc-pvqz"
+    },
+    "nbf": 110,
+    "nshells": 30,
+    "nelectrons": 14,
+    "nelectrons_alpha": 7,
+    "nelectrons_beta": 7
+  }
+}

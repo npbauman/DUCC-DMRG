@@ -1,0 +1,338 @@
+
+date: Mon Dec 18 17:07:47 2023
+program: "/hpc/home/baum612/code/exachem-dev/build/methods_stage/hpc/home/baum612/code/tamm_install/methods/ExaChem"
+input: /hpc/home/baum612/code/exachem-dev/inputs/N2/N2_3.0.json
+nnodes: 1, nproc: 2
+prefix: N2_3.0
+
+Memory information
+{
+ CPU memory per node (GiB): 4534
+ Total CPU memory (GiB): 4534
+}
+
+
+Input file provided
+--------------------
+{
+  "geometry": {
+    "coordinates": [
+      "N  0.000000  0.000000  3.000000",
+      "N  0.000000  0.000000  0.000000"
+    ],
+    "units": "angstrom"
+  },
+  "basis": {
+    "basisset": "cc-pVQZ",
+    "atom_basis": null
+  },
+  "SCF": {
+    "conve": 1e-09,
+    "convd": 1e-08,
+    "tilesize": 30,
+    "restart": false
+  },
+  "CD": {
+    "diagtol": 1e-06
+  },
+  "CC": {
+    "threshold": 1e-08,
+    "ccsd_maxiter": 150,
+    "lshift": 0.1,
+    "nactive": 21,
+    "freeze": {
+      "core": 0
+    },
+    "PRINT": {
+      "tamplitudes": [
+        true,
+        0.05
+      ]
+    }
+  },
+  "TASK": {
+    "scf": false,
+    "mp2": false,
+    "cd_2e": false,
+    "ccsd": false,
+    "ccsd_t": false,
+    "ducc": true
+  }
+}
+
+Number of nodes, processes per node used for SCF calculation: 1, 2
+
+SCF Options
+{
+ charge       = 0
+ multiplicity = 1
+ level shift  = 0
+ tol_int      = 1e-22
+ tol_sch      = 1e-10
+ tol_lindep   = 1e-05
+ conve        = 1e-09
+ convd        = 1e-08
+ diis_hist    = 10
+ AO_tilesize  = 30
+ writem       = 1
+ damp         = 100
+ scf_type     = restricted
+ restart_size = 2000
+ restart      = false
+ debug        = false
+}
+**** Resetting tol_sch to 1e-11
+
+Number of basis functions = 110
+
+Total number of shells = 30
+
+Total number of electrons = 14
+  # of alpha electrons    = 7
+  # of beta electons      = 7
+
+Nuclear repulsion energy  = 8.64322840350354
+
+# of {all,non-negligible} shell-pairs = {465,445}
+Number of AO tiles = 30
+
+Time for initial setup: 0.01 secs
+
+Time for computing 1-e integrals T, V, S: 0.00 secs
+Time for computing orthogonalizer: 0.00 secs
+
+Superposition of Atomic Density Guess ...
+Time taken for SAD: 0.18 secs
+Total Time to compute initial guess: 0.25 secs
+
+
+ SCF iterations
+-----------------------------------------------------------------
+ Iter     Energy            E-Diff       RMSD          Time(s)
+-----------------------------------------------------------------
+   1  -108.0332357624    -1.08e+02     8.21e-04         0.3 
+   2  -108.0359037916    -2.67e-03     2.84e-04         0.3 
+   3  -108.0363038299    -4.00e-04     1.68e-04         0.3 
+   4  -108.0363763265    -7.25e-05     1.11e-05         0.3 
+   5  -108.0363767121    -3.86e-07     7.90e-07         0.3 
+   6  -108.0363767176    -5.48e-09     5.37e-07         0.3 
+   7  -108.0363767182    -6.25e-10     1.08e-07         0.3 
+   8  -108.0363767182    -5.95e-12     2.24e-08         0.3 
+   9  -108.0363767182    -1.39e-11     6.05e-09         0.3 
+
+** Total SCF energy = -108.0363767181984
+
+Nuclear repulsion energy = 8.643228403503540
+#electrons        = 13.999999999999986
+1e energy kinetic = 107.5211186979476992
+1e energy N-e     = -271.1927349456575485
+1e energy         = -163.6716162477097782
+2e energy         = 46.9920113257142091
+writing orbitals and density to disk ... done.
+
+Time taken for Hartree-Fock: 2.98 secs
+
+CCSD Options
+{
+ cache_size           = 8
+ ccsdt_tilesize       = 32
+ ndiis                = 5
+ threshold            = 1e-08
+ tilesize             = 40
+ nactive              = 21
+ ccsd_maxiter         = 150
+ freeze_atomic         = false
+ freeze_core          = 0
+ freeze_virtual       = 0
+ lshift               = 0.1
+ readt                = false
+ writet               = false
+ writev               = false
+ writet_iter          = 5
+ profile_ccsd         = false
+ balance_tiles        = true
+ eom_nroots           = 1
+ eom_microiter        = 50
+ eom_threshold        = 1e-06
+ debug                = false
+}
+
+#occupied, #virtual = 14, 206
+
+Resetting CCSD tilesize to: 50
+
+CD Options
+{
+ debug            = false
+ write_cv         = false
+ diagtol          = 1e-06
+ write_vcount     = 5000
+ itilesize        = 1000
+ max_cvecs_factor = 12
+}
+
+-----------------------------------------------------
+Begin 2-index transformation ... 
+
+nAO, nMO, nelectrons = 110, 220, 14
+n_occ_alpha, n_vir_alpha, n_occ_beta, n_vir_beta = 7,103,7,103
+
+Time taken for Fao->Fmo transform: 0.00 secs
+
+-----------------------------------------------------
+Number of AO tiles = 30
+# of {all,non-negligible} shell-pairs = {465,445}
+
+    Begin Cholesky Decomposition
+---------------------------------------------
+- CPU memory required for computing cholesky vectors: 0.12 GiB
+
+- Time for computing the diagonal: 0.01 secs
+
+- Total number of cholesky vectors = 771
+
+- Time to compute cholesky vectors: 13.70 secs
+
+- CPU memory required for resizing the ao cholesky tensor: 0.19 GiB
+- CPU memory required for ao2mo transformation: 0.21 GiB
+- CPU memory required for the 2-step contraction: 0.28 GiB
+
+- Time for ao to mo transform: 0.76 secs
+
+    End Cholesky Decomposition
+---------------------------------------------
+
+Total Time taken for Cholesky Decomposition: 14.59 secs
+
+----------------------------
+scf_type = restricted
+Closed-Shell SCF
+nbf = 110
+nbf_orig = 110
+n_lindep = 0
+focc = 1
+nmo = 220
+nocc = 14
+nvir = 206
+n_occ_alpha = 7
+n_vir_alpha = 103
+n_occ_beta = 7
+n_vir_beta = 103
+nelectrons = 14
+nelectrons_alpha = 7
+nelectrons_beta = 7
+n_frozen_core = 0
+n_frozen_virtual = 0
+----------------------------
+
+Total CPU memory required for Closed Shell Cholesky CCSD calculation: 0.49 GiB
+
+
+ CCSD iterations
+------------------------------------------------------------
+  Iter     Residuum          Correlation          Time(s)
+------------------------------------------------------------
+   1     1.0445920910873    0.0000000000000         3.19
+   2     0.6150809034215   -1.4336467062515         2.99
+   3     1.4217480507269    0.5207061858066         2.96
+   4     2.2622952988947   -3.8489839084891         2.98
+   5     3.7310764722410    2.3838544311286         2.96
+ MICROCYCLE DIIS UPDATE:                    6
+   6     0.1421818280752   -0.8596091705835         2.96
+   7     0.3303161587279   -0.4279213734199         2.95
+   8     0.5952816397311   -1.4095202672589         2.97
+   9     1.2859827132124    0.3984922523691         2.96
+  10     2.1042835079040   -3.5124770774404         2.95
+ MICROCYCLE DIIS UPDATE:                   11
+  11     0.0392521637446   -0.7808211849868         2.95
+  12     0.0975513058791   -0.7025889890999         2.97
+  13     0.1236042825190   -0.9302701886225         2.95
+  14     0.3085354329051   -0.5491082605332         2.95
+  15     0.5509298026833   -1.3818863933103         2.95
+ MICROCYCLE DIIS UPDATE:                   16
+  16     0.0353080854954   -0.8377519343349         2.95
+  17     0.1186860799637   -0.7450854729869         2.98
+  18     0.1518875082296   -1.0180867975904         2.95
+  19     0.3485340953098   -0.5863659524289         2.95
+  20     0.6140931659483   -1.4753096048677         2.95
+ MICROCYCLE DIIS UPDATE:                   21
+  21     0.0314898888937   -0.8539793106156         2.95
+  22     0.1008349299954   -0.7949735711841         2.95
+  23     0.1100185993674   -1.0080167674986         2.95
+  24     0.2586622814707   -0.7043422219889         2.97
+  25     0.4200254623903   -1.3293419647183         2.95
+ MICROCYCLE DIIS UPDATE:                   26
+  26     0.0279178778884   -0.9007166128888         2.95
+  27     0.0971011889815   -0.8487552017134         2.95
+  28     0.1041710162742   -1.0496588968039         2.95
+  29     0.2195603911740   -0.7841509965996         2.95
+  30     0.3369705598871   -1.2891623385890         2.95
+ MICROCYCLE DIIS UPDATE:                   31
+  31     0.0199266859781   -0.9634053906381         2.97
+  32     0.0705309121680   -0.9301494281099         2.94
+  33     0.0740141108623   -1.0722525430360         2.95
+  34     0.1333923069510   -0.9017163074601         2.94
+  35     0.1854034024922   -1.1886095654932         2.93
+ MICROCYCLE DIIS UPDATE:                   36
+  36     0.0078019222352   -1.0247459297068         2.94
+  37     0.0210310903636   -1.0171431162599         2.93
+  38     0.0206474071416   -1.0577046928488         2.95
+  39     0.0329857963968   -1.0138807472811         2.94
+  40     0.0411265266874   -1.0803518488024         2.94
+ MICROCYCLE DIIS UPDATE:                   41
+  41     0.0009203757342   -1.0481675991436         2.94
+  42     0.0014615815046   -1.0491977812516         2.95
+  43     0.0020452512382   -1.0462697316216         2.95
+  44     0.0028693413342   -1.0504246292315         2.95
+  45     0.0038093082648   -1.0446461370444         2.96
+ MICROCYCLE DIIS UPDATE:                   46
+  46     0.0000554625832   -1.0479199269615         2.95
+  47     0.0000494105243   -1.0479621086477         2.98
+  48     0.0000568624455   -1.0478707528251         2.92
+  49     0.0000736065612   -1.0479834089552         2.93
+  50     0.0000939372122   -1.0478359704839         2.94
+ MICROCYCLE DIIS UPDATE:                   51
+  51     0.0000016705010   -1.0479159734686         2.95
+  52     0.0000015112609   -1.0479153861038         2.94
+  53     0.0000017221595   -1.0479174903659         2.94
+  54     0.0000024333713   -1.0479144525599         2.94
+  55     0.0000031821731   -1.0479191110999         2.94
+ MICROCYCLE DIIS UPDATE:                   56
+  56     0.0000001431286   -1.0479165178371         2.94
+  57     0.0000000895932   -1.0479164886444         2.94
+  58     0.0000001200521   -1.0479165466829         2.96
+  59     0.0000002604855   -1.0479164255752         2.94
+  60     0.0000006968488   -1.0479166133357         2.94
+ MICROCYCLE DIIS UPDATE:                   61
+  61     0.0000000213863   -1.0479164890266         2.94
+  62     0.0000000171313   -1.0479165036121         2.94
+  63     0.0000000196092   -1.0479164915072         2.94
+  64     0.0000000399664   -1.0479164972427         2.94
+  65     0.0000001094864   -1.0479164983462         2.95
+ MICROCYCLE DIIS UPDATE:                   66
+  66     0.0000000027516   -1.0479164947433         2.93
+------------------------------------------------------------------
+ Iterations converged
+ CCSD correlation energy / hartree =        -1.047916494743318
+ CCSD total energy / hartree       =      -109.084293212941716
+
+Time taken for Closed Shell Cholesky CCSD: 195.60 secs
+
+Threshold for printing amplitudes set to: 0.05
+T1, T2 amplitudes written to files: N2_3.0.cc-pvqz_files/restricted/N2_3.0.cc-pvqz.print_t1amp.txt, N2_3.0.cc-pvqz_files/restricted/N2_3.0.cc-pvqz.print_t2amp.txt
+
+
+DUCC: Time taken to compute Bare Hamiltonian: 0.00 secs
+
+DUCC: Time taken to compute Single Commutator: 0.41 secs
+
+DUCC: Time taken to compute Double Commutator: 31.63 secs
+
+DUCC: Time taken to compute Triple Commutator: 5.99 secs
+
+DUCC: Total Compute Time: 38.03 secs
+
+Number of active orbitals = 28
+
+
+DUCC: Time to write results: 0.23 secs
