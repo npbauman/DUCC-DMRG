@@ -1,4 +1,6 @@
- "$schema": https://raw.githubusercontent.com/Microsoft/Quantum/master/Chemistry/Schema/broombridge-0.3.schema.json 
+
+"$schema": https://raw.githubusercontent.com/Microsoft/Quantum/master/Chemistry/Schema/broombridge-0.1.schema.json
+
 bibliography:
 - {url: 'https://doi.org/10.48550/arXiv.2201.01257'}
 format: {version: '0.3'}
